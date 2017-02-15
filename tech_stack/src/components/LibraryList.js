@@ -1,28 +1,23 @@
-import React from 'react';
-import { View } from 'react-native';
-
-const LibraryList = () => (
-    <View />
-
-  );
-export default LibraryList;
-
-/*import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import { ListView } from 'react-native';
+import { connect } from 'react-redux';
+import ListItem from './ListItem';
 
 class LibraryList extends Component {
- componentWillMount() {
+
+  componentWillMount() {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
     this.dataSource = ds.cloneWithRows(this.props.libraries);
- }
- renderRow() {
-    
- }
- render() {
+  }
+
+  renderRow(library) {
+    return <ListItem library={library} />;
+  }
+
+  render() {
     return (
       <ListView
         dataSource={this.dataSource}
@@ -31,9 +26,10 @@ class LibraryList extends Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   return { libraries: state.libraries };
 };
 
-export default connect(mapStateToProps)(LibraryList);*/
+export default connect(mapStateToProps)(LibraryList);
 
