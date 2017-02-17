@@ -19,7 +19,7 @@ class LoginForm extends Component {
     this.props.loginUser({ email, password });
   }
 
-  renderButton() {
+   renderButton() {
     if (this.props.loading) {
       return <Spinner size="large" />;
     }
@@ -58,7 +58,7 @@ class LoginForm extends Component {
         </Text>
 
         <CardSection>
-          {this.renderButton()}
+         {this.renderButton()}
         </CardSection>
       </Card>
     );
